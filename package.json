@@ -1,0 +1,19 @@
+{
+  "name": "okanemotto",
+  "version": "1.0.0",
+  "description": "A simple financial planning and tracking application to help budget and keep track of expendatures",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmaines16/OkaneMotto.git"
+  },
+  "author": "Mason Maines",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmaines16/OkaneMotto/issues"
+  },
+  "homepage": "https://github.com/mmaines16/OkaneMotto#readme"
+}
