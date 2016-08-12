@@ -7,19 +7,30 @@ mongoose.connect('mongodb://localhost/okanemotto');
 
 var db = mongoose.connection;
 
-mongoose.model('users', {
-  "name": String,
-  "email": String,
-  "password": String,
-  "admin": Boolean,
-  "superuser": Boolean,
-  "active": Boolean,
-});
+User = require('../models/users');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  mongoose.model('users').find(function(err, users){
-    res.send(users);
+  User.getUsers(function(err, users){
+    if(err){
+      throw err;
+    }
+    
+    res.json(users);
+  });
+});
+
+router.get('/test/password/:_id', function(req, res, next){
+  User.getUserById(req.params._id, function(err, user){
+    
+    console.log(user);
+    if(err){
+      throw err;
+    }
+    
+    console.log(user.generateHash('1001Nash*'));
+    
+    res.json(user);
   });
 });
 
